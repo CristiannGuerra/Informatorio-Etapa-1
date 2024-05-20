@@ -1,0 +1,53 @@
+/* explicacion: al comienzo de nuestra hoja de estilos 
+es muy comun declarar las variables a utilizar */
+:root {
+  /* colors */
+  --texto-primario: #dddddd;
+  --texto-secundario: #d1d1d1;
+  --fondo-primario: #0f0921;
+  --fondo-primario-transparente: #0f092180;
+  --fondo-secundario: #0a0c13;
+  --color-primario: #2c2acb;
+  --color-primario-apagado: #2422a3;
+  --color-secundario: #9b70f9;
+  --color-terciario: #6f6f6f;
+
+  /* sizes */
+  --presentacion-titulo-tamanio: 4rem;
+  --presentacion-titulo-tamanio-grande: 3.4rem;
+  --presentacion-descripcion-tamanio: 1.2rem;
+  --titulo-tamanio: 3rem;
+  --sub-titulo-tamanio: 2rem;
+  --texto-tamanio: 1.1rem;
+  --enlaces-tamanio: 1.2rem;
+  --texto-peso-grueso: 700;
+  --texto-peso-regular: 400;
+  --texto-peso-fino: 300;
+}
+
+/* luego estilos que normalizaran los elementos y se aplicaran a todos */
+/* estilos generales */
+* {
+  /* normalizador */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* generales */
+  color: var(--texto-primario);
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+/* por ultimo unos detalles en el html y body para asegurarnos de que 
+todo quede listo para continuar los estilos */
+html {
+  background-color: var(--fondo-primario);
+}
+body {
+  min-height: 100%;
+  position: relative;
+}
+
+/* aquí finalizamos este primer video tutorial sobre el proyecto optativo, 
+la semana que viene será el momento de comenzar a agregar mas estilos a la página */
