@@ -1,0 +1,430 @@
+:root {
+  /* colors */
+  --texto-primario: #dddddd;
+  --texto-secundario: #d1d1d1;
+  --fondo-primario: #0f0921;
+  --fondo-primario-transparente: #0f092180;
+  --fondo-secundario: #0a0c13;
+  --color-primario: #2c2acb;
+  --color-primario-apagado: #2422a3;
+  --color-secundario: #9b70f9;
+  --color-terciario: #6f6f6f;
+
+  /* sizes */
+  --presentacion-titulo-tamanio: 4rem;
+  --presentacion-titulo-tamanio-grande: 3.4rem;
+  --presentacion-descripcion-tamanio: 1.2rem;
+  --titulo-tamanio: 3rem;
+  --sub-titulo-tamanio: 2rem;
+  --texto-tamanio: 1.1rem;
+  --enlaces-tamanio: 1.2rem;
+  --texto-peso-grueso: 700;
+  --texto-peso-regular: 400;
+  --texto-peso-fino: 300;
+}
+
+/* estilos generales */
+* {
+  /* normalizador */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* generales */
+  color: var(--texto-primario);
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+html {
+  background-color: var(--fondo-primario);
+}
+body {
+  min-height: 100%;
+  position: relative;
+}
+
+/* Hola, en este video continuaremos agregando estilos al proyecto. 
+Para esto mismo deberemos utilizar las clases que utilizamos anteriormente en las etiquetas de html. 
+Comencemos siguiendo la estructura de nuestro documento html de arriba hacia abajo. Para facilitar esto
+escribamos la misma (comentarios: encabezado, principal, presentacion, articulo, seccion descripcion,
+ pie de pagina) 
+recuerden que tambien teniamos elementos que podian repetirse en varios lugares de la pagina, los mismos 
+los escribiremos al final (comentarios: enlaces, botones, tarjetas) */
+
+/* encabezado */
+.encabezado {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.navegacion {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+}
+.navegacion__enlace {
+  text-decoration: none;
+}
+.navegacion__titulo {
+  font-size: var(--titulo-tamanio);
+  text-shadow: 2px 2px 2px var(--fondo-secundario);
+}
+
+/* principal */
+.principal {
+  background-color: var(--fondo-primario);
+}
+
+/* presentacion */
+.presentacion {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./assets/images/profile/hero-tema-oscuro.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.presentacion__contenedor_info {
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  background: linear-gradient(
+    90deg,
+    var(--fondo-primario-transparente) 20%,
+    transparent 40%
+  );
+}
+.presentacion__contenedor_botones {
+  width: 420px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.presentacion__titulo {
+  font-size: var(--presentacion-titulo-tamanio);
+  color: var(--color-primario);
+  text-shadow: 2px 2px 2px var(--fondo-secundario);
+  /*  animation: cambiar-color 8s linear infinite alternate; */
+}
+
+.presentacion__parrafo {
+  max-width: 460px;
+  font-size: var(--presentacion-descripcion-tamanio);
+  color: var(--texto-secundario);
+  text-wrap: pretty;
+}
+
+/* articulo */
+.articulo {
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+.sobre_mi {
+  background: linear-gradient(
+    180deg,
+    rgb(15 8 16) 0%,
+    var(--fondo-primario) 10%,
+    var(--color-primario-apagado) 75%,
+    var(--color-primario) 90%
+  );
+}
+.proyectos {
+  background: linear-gradient(
+    180deg,
+    var(--color-primario) 0%,
+    var(--color-primario-apagado) 10%,
+    var(--fondo-primario) 55%
+  );
+  /* eliminar en el video 3 */
+  height: max-content;
+}
+
+.articulo__titulo {
+  font-size: var(--titulo-tamanio);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 2px var(--fondo-secundario);
+}
+.articulo__contenedor_descripciones {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* seccion descripcion */
+.seccion_descripcion {
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 40px;
+  background-color: var(--fondo-primario-transparente);
+  border-radius: 20px;
+}
+
+.seccion_descripcion__porta_retrato {
+  height: 300px;
+  width: 300px;
+  padding: 10px;
+  background-color: var(--texto-primario);
+  /*   background-color: transparent; */
+  cursor: pointer;
+}
+.seccion_descripcion__imagen {
+  width: 100%;
+  height: 240px;
+  /* width: 300px;
+  height: 300px;
+  padding: 10px;
+  padding-bottom: 50px;
+  background-color: var(--texto-primario);
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%); */
+  object-fit: cover;
+  /* transition: left 0.3s ease, right 0.3s ease, top 0.3s ease, bottom 0.3s ease,
+    width 0.3s ease, height 0.3s ease, padding 0.3s ease,
+    background-color 0.3s ease, transform 0.3s ease,
+    border-radius 0.1s 0.2s ease; */
+}
+/* .seccion_descripcion__imagen_variante {
+  top: auto;
+  bottom: 40px;
+}
+
+.seccion_descripcion__imagen:hover {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: var(--texto-primario);
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+  transform: translateX(0);
+}
+.seccion_descripcion__imagen_variante:hover {
+  top: auto;
+  bottom: 0;
+} */
+
+.seccion_descripcion__info {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  max-height: 300px;
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+}
+.seccion_descripcion__titulo {
+  font-size: var(--sub-titulo-tamanio);
+  padding: 1rem;
+  margin-bottom: 40px;
+}
+.seccion_descripcion__parrafo {
+  font-size: var(--texto-tamanio);
+  color: var(--texto-secundario);
+  text-wrap: pretty;
+}
+
+/* pie de pagina */
+.pie_de_pagina {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  padding: 20px;
+  padding-top: 3rem;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: var(--fondo-primario);
+  background: linear-gradient(
+    180deg,
+    var(--fondo-primario) 0%,
+    var(--fondo-secundario) 100%
+  );
+  border-top: 1px solid var(--texto-secundario);
+}
+.pie_de_pagina__columna {
+  flex-basis: 300px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.pie_de_pagina__copyright {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pie_de_pagina__titulo_columna {
+  width: 100%;
+  font-size: var(--texto-tamanio);
+  font-weight: var(--texto-peso-regular);
+  padding: 4px;
+  border-bottom: 3px solid var(--texto-secundario);
+}
+/* enlaces */
+.enlaces {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.enlaces_redes {
+  width: 100%;
+}
+.enlaces_vertical {
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.enlaces__item {
+  list-style: none;
+}
+.enlaces__enlace {
+  font-size: var(--enlaces-tamanio);
+  font-weight: var(--texto-peso-grueso);
+  color: var(--texto-primario);
+  text-decoration: none;
+  /* transition: color 0.3s ease; */
+}
+.enlaces__enlace_footer {
+  font-size: var(--enlaces-tamanio-pequenio);
+  font-weight: var(--texto-peso-fino);
+}
+.enlaces__icono {
+  width: 40px;
+  aspect-ratio: 1;
+  filter: drop-shadow(0px 0px 2px var(--texto-primario));
+}
+/* .enlaces__icono:hover {
+  filter: drop-shadow(0px 0px 4px var(--texto-primario));
+}
+.enlaces__enlace:hover,
+.enlaces__enlace:focus {
+  color: var(--color-primario);
+} */
+/* botones */
+.boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  font-weight: var(--texto-peso-grueso);
+  text-decoration: none;
+  background-color: var(--texto-primario);
+  color: var(--fondo-primario);
+  border-radius: 4px;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */ /* agregar en semana siguiente */
+}
+/* .boton:hover {
+  color: var(--texto-primario);
+  background-color: var(--color-primario-apagado);
+} */
+.boton_oscuro {
+  color: var(--texto-primario);
+  background-color: var(--color-primario);
+}
+/* .boton_oscuro:hover {
+  color: var(--texto-primario);
+  background-color: var(--color-primario-apagado);
+} */
+
+/* tarjetas */
+.contenedor_tarjetas_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-rows: 1fr 1fr auto;
+  gap: 2rem;
+}
+.tarjeta {
+  max-width: 600px;
+  height: 300px;
+  background-color: var(--fondo-primario-transparente);
+  border-radius: 0.375rem;
+  box-shadow: 0 0 8px var(--color-primario-transparente);
+  /* position: relative; */
+  overflow: hidden;
+  /* transition: box-shadow 0.3s ease; */
+  /* eliminar display flex en video 3 */
+  display: flex;
+}
+.tarjeta__contenido {
+  /* position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;*/
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  /* background-color: var(--fondo-primario-transparente); */
+  /* backdrop-filter: blur(4px); */
+  /* opacity: 0; */
+  /* transition: opacity 0.3s ease; */
+}
+.tarjeta__contenido .boton {
+  align-self: flex-end;
+}
+.tarjeta__titulo {
+  font-size: var(--sub-titulo-tamanio);
+}
+.tarjeta__divisor {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primario);
+}
+
+.tarjeta__parrafo {
+  font-size: var(--texto-tamanio);
+  color: var(--texto-secundario);
+  overflow: auto;
+  flex-basis: 150px;
+  text-wrap: pretty;
+}
+.tarjeta__imagen {
+  height: 100%;
+  width: 50%;
+  /* width: 100%; */
+  object-fit: cover;
+  /* transition: transform 0.3s ease-in; */
+}
+/* .tarjeta:hover {
+  box-shadow: 0px 0px 12px var(--fondo-secundario);
+}
+.tarjeta:hover > .tarjeta__imagen {
+  transform: scale(1.2);
+}
+.tarjeta:hover > .tarjeta__contenido {
+  opacity: 1;
+} */
