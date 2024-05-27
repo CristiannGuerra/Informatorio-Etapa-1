@@ -1,0 +1,6 @@
+.navegacion {
+  display: flex;
+  height: 200px;
+  background-color: lightblue;
+  justify-content: space-between;
+}
